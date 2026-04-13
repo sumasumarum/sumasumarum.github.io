@@ -26,7 +26,7 @@
             margin: 0;
         }
         </style>
-        <title>План одвожења кабастог отпада на територији општине Суботица</title>
+        <title>Bulky waste removal plan in the territory of the municipality of Subotica</title>
     </head>
     <body>
         <!-- LANGUAGE-POPUP -->
@@ -34,25 +34,25 @@
         <div class="flag-sidebar">
           <button class="toggle-btn" onclick="toggleMenu()">🌐</button>
           <div class="menu-content" id="flagMenu">
-            <!-- latinica -->
-            <a href="sr/" class="flag-item">
-              <span class="country-text">Latinica</span>
-              <img src="images/rs.svg" alt="SR">
+            <!-- cirilica -->
+            <a href="./" class="flag-item">
+              <span class="country-text">Ћирили</span>
+              <img src="images/rs.svg" alt="СР">
             </a>
             <!-- madjarski -->
             <a href="hu/" class="flag-item">
               <span class="country-text">Magyar</span>
               <img src="images/hu.svg" alt="HU">
             </a>
-            <!-- engleski -->
-            <a href="en/" class="flag-item">
-              <span class="country-text">English</span>
-              <img src="images/uk.svg" alt="EN">
+            <!-- madjarski -->
+            <a href="hu/" class="flag-item">
+              <span class="country-text">Magyar</span>
+              <img src="images/hu.svg" alt="HU">
             </a>
           </div>
         </div>
         <div id="popup">
-          <span class="popup-text">КЛИК за више детаља</span>
+          <span class="popup-text">CLICK for more details</span>
           <div class="dot">
             <!-- Hand is now nested in dot for easier alignment -->
             <svg class="hand-icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
@@ -79,14 +79,14 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="data/subotica_teritorija_1.js"></script>
-        <script src="data/kabasti_Gradske_MZ_2.js"></script>
-        <script src="data/kabasti_Prigradske_MZ_3.js"></script>
+        <script src="data/kabasti_Gradske_MZ_lat_2.js"></script>
+        <script src="data/kabasti_Prigradske_MZ_lat_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('Извор: <a href="https://www.cistoca-su.co.rs/" target="_blank">ЈКП "Чистоћа и зеленило" Суботица"</a> &middot; by cvekiboy');
+        map.attributionControl.setPrefix('Source: <a href="https://www.cistoca-su.co.rs/" target="_blank">JKP "Čistoća i zelenilo" Subotica"</a> &middot; by cvekiboy');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
@@ -211,23 +211,23 @@
         });
         bounds_group.addLayer(layer_subotica_teritorija_1);
         map.addLayer(layer_subotica_teritorija_1);
-        function pop_kabasti_Gradske_MZ_2(feature, layer) {
+        function pop_kabasti_Gradske_MZ_lat_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Месна заједница</th>\
-                        <td class="visible-with-data" id="Месна заједница">' + (feature.properties['Месна заједница'] !== null ? autolinker.link(String(feature.properties['Месна заједница']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Mesna zajednica</th>\
+                        <td class="visible-with-data" id="Mesna zajednica">' + (feature.properties['Mesna zajednica'] !== null ? autolinker.link(String(feature.properties['Mesna zajednica']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Позиција</th>\
-                        <td class="visible-with-data" id="Позиција">' + (feature.properties['Позиција'] !== null ? autolinker.link(String(feature.properties['Позиција']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Pozicija</th>\
+                        <td class="visible-with-data" id="Pozicija">' + (feature.properties['Pozicija'] !== null ? autolinker.link(String(feature.properties['Pozicija']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Датум од</th>\
-                        <td class="visible-with-data" id="Датум од"><strong>' + (feature.properties['Датум од'] !== null ? autolinker.link(String(feature.properties['Датум од']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
+                        <th scope="row">Datum od</th>\
+                        <td class="visible-with-data" id="Datum od"><strong>' + (feature.properties['Datum od'] !== null ? autolinker.link(String(feature.properties['Datum od']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Датум до</th>\
-                        <td class="visible-with-data" id="Датум до"><strong>' + (feature.properties['Датум до'] !== null ? autolinker.link(String(feature.properties['Датум до']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
+                        <th scope="row">Datum do</th>\
+                        <td class="visible-with-data" id="Datum do"><strong>' + (feature.properties['Datum do'] !== null ? autolinker.link(String(feature.properties['Datum do']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -237,9 +237,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_kabasti_Gradske_MZ_2_0() {
+        function style_kabasti_Gradske_MZ_lat_2_0() {
             return {
-                pane: 'pane_kabasti_Gradske_MZ_2',
+                pane: 'pane_kabasti_Gradske_MZ_lat_2',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -253,43 +253,43 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_kabasti_Gradske_MZ_2');
-        map.getPane('pane_kabasti_Gradske_MZ_2').style.zIndex = 402;
-        map.getPane('pane_kabasti_Gradske_MZ_2').style['mix-blend-mode'] = 'normal';
-        var layer_kabasti_Gradske_MZ_2 = new L.geoJson(json_kabasti_Gradske_MZ_2, {
+        map.createPane('pane_kabasti_Gradske_MZ_lat_2');
+        map.getPane('pane_kabasti_Gradske_MZ_lat_2').style.zIndex = 402;
+        map.getPane('pane_kabasti_Gradske_MZ_lat_2').style['mix-blend-mode'] = 'normal';
+        var layer_kabasti_Gradske_MZ_lat_2 = new L.geoJson(json_kabasti_Gradske_MZ_lat_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_kabasti_Gradske_MZ_2',
-            layerName: 'layer_kabasti_Gradske_MZ_2',
-            pane: 'pane_kabasti_Gradske_MZ_2',
-            onEachFeature: pop_kabasti_Gradske_MZ_2,
+            dataVar: 'json_kabasti_Gradske_MZ_lat_2',
+            layerName: 'layer_kabasti_Gradske_MZ_lat_2',
+            pane: 'pane_kabasti_Gradske_MZ_lat_2',
+            onEachFeature: pop_kabasti_Gradske_MZ_lat_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_kabasti_Gradske_MZ_2_0(feature));
+                return L.circleMarker(latlng, style_kabasti_Gradske_MZ_lat_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_kabasti_Gradske_MZ_2);
-        map.addLayer(layer_kabasti_Gradske_MZ_2);
-        function pop_kabasti_Prigradske_MZ_3(feature, layer) {
+        bounds_group.addLayer(layer_kabasti_Gradske_MZ_lat_2);
+        map.addLayer(layer_kabasti_Gradske_MZ_lat_2);
+        function pop_kabasti_Prigradske_MZ_lat_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Месна заједница</th>\
-                        <td class="visible-with-data" id="Месна заједница">' + (feature.properties['Месна заједница'] !== null ? autolinker.link(String(feature.properties['Месна заједница']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Mesna zajednica</th>\
+                        <td class="visible-with-data" id="Mesna zajednica">' + (feature.properties['Mesna zajednica'] !== null ? autolinker.link(String(feature.properties['Mesna zajednica']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Позиција</th>\
-                        <td class="visible-with-data" id="Позиција">' + (feature.properties['Позиција'] !== null ? autolinker.link(String(feature.properties['Позиција']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Pozicija</th>\
+                        <td class="visible-with-data" id="Pozicija">' + (feature.properties['Pozicija'] !== null ? autolinker.link(String(feature.properties['Pozicija']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Датум од</th>\
-                        <td class="visible-with-data" id="Датум од"><strong>' + (feature.properties['Датум од'] !== null ? autolinker.link(String(feature.properties['Датум од']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
+                        <th scope="row">Datum od</th>\
+                        <td class="visible-with-data" id="Datum od"><strong>' + (feature.properties['Datum od'] !== null ? autolinker.link(String(feature.properties['Datum od']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Датум до</th>\
-                        <td class="visible-with-data" id="Датум до"><strong>' + (feature.properties['Датум до'] !== null ? autolinker.link(String(feature.properties['Датум до']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
+                        <th scope="row">Datum do</th>\
+                        <td class="visible-with-data" id="Datum do"><strong>' + (feature.properties['Datum do'] !== null ? autolinker.link(String(feature.properties['Datum do']).replace(/'/g, '\'').toLocaleString()) : '') + '</strong></td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -299,9 +299,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_kabasti_Prigradske_MZ_3_0() {
+        function style_kabasti_Prigradske_MZ_lat_3_0() {
             return {
-                pane: 'pane_kabasti_Prigradske_MZ_3',
+                pane: 'pane_kabasti_Prigradske_MZ_lat_3',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -315,36 +315,36 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_kabasti_Prigradske_MZ_3');
-        map.getPane('pane_kabasti_Prigradske_MZ_3').style.zIndex = 403;
-        map.getPane('pane_kabasti_Prigradske_MZ_3').style['mix-blend-mode'] = 'normal';
-        var layer_kabasti_Prigradske_MZ_3 = new L.geoJson(json_kabasti_Prigradske_MZ_3, {
+        map.createPane('pane_kabasti_Prigradske_MZ_lat_3');
+        map.getPane('pane_kabasti_Prigradske_MZ_lat_3').style.zIndex = 403;
+        map.getPane('pane_kabasti_Prigradske_MZ_lat_3').style['mix-blend-mode'] = 'normal';
+        var layer_kabasti_Prigradske_MZ_lat_3 = new L.geoJson(json_kabasti_Prigradske_MZ_lat_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_kabasti_Prigradske_MZ_3',
-            layerName: 'layer_kabasti_Prigradske_MZ_3',
-            pane: 'pane_kabasti_Prigradske_MZ_3',
-            onEachFeature: pop_kabasti_Prigradske_MZ_3,
+            dataVar: 'json_kabasti_Prigradske_MZ_lat_3',
+            layerName: 'layer_kabasti_Prigradske_MZ_lat_3',
+            pane: 'pane_kabasti_Prigradske_MZ_lat_3',
+            onEachFeature: pop_kabasti_Prigradske_MZ_lat_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_kabasti_Prigradske_MZ_3_0(feature));
+                return L.circleMarker(latlng, style_kabasti_Prigradske_MZ_lat_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_kabasti_Prigradske_MZ_3);
-        map.addLayer(layer_kabasti_Prigradske_MZ_3);
+        bounds_group.addLayer(layer_kabasti_Prigradske_MZ_lat_3);
+        map.addLayer(layer_kabasti_Prigradske_MZ_lat_3);
         setBounds();
-        resetLabels([layer_kabasti_Gradske_MZ_2]);
+        resetLabels([layer_kabasti_Gradske_MZ_lat_2]);
         map.on("zoomend", function(){
-            resetLabels([layer_kabasti_Gradske_MZ_2]);
+            resetLabels([layer_kabasti_Gradske_MZ_lat_2]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_kabasti_Gradske_MZ_2]);
+            resetLabels([layer_kabasti_Gradske_MZ_lat_2]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_kabasti_Gradske_MZ_2]);
+            resetLabels([layer_kabasti_Gradske_MZ_lat_2]);
         });
         </script>        
     </body>

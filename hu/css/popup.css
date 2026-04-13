@@ -1,0 +1,51 @@
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 180px;
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column; /* Stack text and dot vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between text and dot */
+    z-index: 1000;
+    font-family: sans-serif;
+  }
+
+  .popup-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    pointer-events: none;
+  }
+
+  .dot {
+    width: 18px;
+    height: 18px;
+    background: #803b04;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .hand-icon {
+    position: absolute;
+    width: 35px;
+    top: -5px; /* Adjust starting position relative to dot */
+    left: -8px;
+    pointer-events: none;
+    animation: hand-click 2s infinite ease-in-out;
+  }
+
+  @keyframes hand-click {
+    0%, 100% { transform: translate(30px, 30px) scale(1); opacity: 1; }
+    40%      { transform: translate(5px, 5px) scale(1); }   /* Move to dot */
+    50%      { transform: translate(5px, 5px) scale(0.8); } /* Click press */
+    60%      { transform: translate(5px, 5px) scale(1); }   /* Release */
+  }
+
+  .hidden { display: none !important; }

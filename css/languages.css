@@ -1,0 +1,91 @@
+.flag-sidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+/* Transparent Button */
+.toggle-btn {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.toggle-btn:hover { opacity: 1; }
+
+/* Menu Reveal Animation */
+.menu-content {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.menu-content.show {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Clickable Link Container */
+.flag-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  margin-bottom: 15px;
+  height: 35px;
+  /* Removed the 120px padding */
+  background: transparent;
+}
+
+/* The Flag Image (Slides Left) */
+.flag-item img {
+  width: 45px;
+  height: 30px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  /* This ensures the mouse stays over the link as it moves */
+  pointer-events: auto; 
+}
+
+/* The Transparent Text (Revealed from behind) */
+.country-text {
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease-in-out;
+  /* Ensures the link area covers the text spot */
+  padding-right: 5px; 
+}
+
+/* HOVER EFFECT */
+.flag-item:hover img {
+  transform: translateX(-135%); /* Slides flag left to reveal text */
+}
+
+.flag-item:hover .country-text {
+  opacity: 1;
+  right: 0; /* Text shifts slightly for a clean look */
+}
