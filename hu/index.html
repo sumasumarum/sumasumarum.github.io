@@ -51,19 +51,25 @@
             </a>
           </div>
         </div>
-        <div id="popup">
-          <span class="popup-text">KATTINTS a további részletekért</span>
-          <div class="dot">
-            <!-- Hand is now nested in dot for easier alignment -->
-            <svg class="hand-icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
-              <path d="M 13,11 V 9 c 0,-1.1 0.9,-2 2,-2 1.1,0 2,0.9 2,2 v 2 m 0,0 v -1 c 0,-1.1 0.9,-2 2,-2 1.1,0 2,0.9 2,2 v 6 c 0,3.3 -2.7,6 -6,6 H 9.6453325 l -6.09375,-4.854324 c -0.7452203,-0.657604 1.7456732,-3.217157 2.1461893,-2.917846 1.4220836,1.062741 2.119277,1.726517 3.3021835,2.676399 L 9.0024888,10.72141 9,5 c -4.785e-4,-1.0999999 0.9,-2 2,-2 1.1,0 2,0.9 2,2 v 6" />
-            </svg>
-          </div>
+        <div id="popup-wrapper">
+            <div class="popup-title">Tavaszi akció 2026. március 19-től június 10-ig</div>
+                <div id="popup">
+                  <span class="popup-text">KATTINTS a további részletekért</span>
+                  <div class="dot">
+                    <!-- Hand is now nested in dot for easier alignment -->
+                    <svg class="hand-icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
+                      <path d="M 13,11 V 9 c 0,-1.1 0.9,-2 2,-2 1.1,0 2,0.9 2,2 v 2 m 0,0 v -1 c 0,-1.1 0.9,-2 2,-2 1.1,0 2,0.9 2,2 v 6 c 0,3.3 -2.7,6 -6,6 H 9.6453325 l -6.09375,-4.854324 c -0.7452203,-0.657604 1.7456732,-3.217157 2.1461893,-2.917846 1.4220836,1.062741 2.119277,1.726517 3.3021835,2.676399 L 9.0024888,10.72141 9,5 c -4.785e-4,-1.0999999 0.9,-2 2,-2 1.1,0 2,0.9 2,2 v 6" />
+                    </svg>
+                  </div>
+                </div>
+            </div>
         </div>
         <script>
-          window.addEventListener('click', () => {
-            document.getElementById('popup')?.classList.add('hidden');
-          }, { once: true });
+          setTimeout(() => {
+            window.addEventListener('click', () => {
+              document.getElementById('popup-wrapper')?.classList.add('hidden');
+            }, { once: true });
+          }, 500); // half a second delay
         </script>
         <div id="map">
         </div>
