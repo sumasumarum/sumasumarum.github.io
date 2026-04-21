@@ -92,7 +92,7 @@
             zoomControl:false, maxZoom:28, minZoom:1
         })
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('Source: <a href="https://www.cistoca-su.co.rs/" target="_blank">PUC "Cleanliness and Greenery" Subotica</a> &middot; Map: <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> &middot; by cvekiboy');
+        map.attributionControl.setPrefix('Source: <a href="https://www.cistoca-su.co.rs/" target="_blank">PUC "Cleanliness and Greenery" Subotica</a> &copy; Map: <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> &middot; by cvekiboy');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
