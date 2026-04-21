@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  z-index: 1000;
+  z-index: 1100;  /* Shows with popup - with 1000 not */
   font-family: sans-serif;
 }
 
